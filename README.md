@@ -40,7 +40,16 @@ Instead, it will copy all the configuration files and the transitive dependencie
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
 ## Learn More
+对于要构建的项目，这些文件必须以准确的文件名存在：
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+> public/index.html是页面模板；
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+>src/index.js是 JavaScript 入口点。
+
+你可以在里面创建子目录src。为了更快地重建，srcwebpack 只处理内部的文件。你需要将任何 JS 和 CSS 文件放入src其中，否则 webpack 将看不到它们。
+
+只有里面的文件public可以从public/index.html. 阅读以下关于使用 JavaScript 和 HTML 资源的说明。
+
+但是，您可以创建更多顶级目录。它们不会包含在生产版本中，因此您可以将它们用于文档等内容。
+
+如果您安装了 Git 并且您的项目不是较大存储库的一部分，则将初始化一个新存储库，从而生成一个额外的顶级.git目录。
